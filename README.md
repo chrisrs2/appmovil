@@ -1,2 +1,2 @@
 # appmovilkivy
-Tap Fly Bird un juego crado en kivy python e inspirado en Flappy Bird
+Tap Fly Bird un juego creado en kivy python e inspirado en Flappy Bird
