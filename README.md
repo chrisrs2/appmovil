@@ -1,2 +1,2 @@
 # appmovilkivy
-Tap fly bird un juego inspirado en flappy bird 
+Tap Fly Bird un juego inspirado en flappy bird
