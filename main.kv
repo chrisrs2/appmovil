@@ -1,0 +1,55 @@
+#:include pipe.kv
+#:include main.py
+
+FloatLayout:
+    Background:
+        id: background
+        canvas.before:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: "sky.png"
+            Rectangle:
+                size: self.width, 150
+                pos: self.pos[0], self.pos[1] + self.height - 138
+                texture: self.cloud_texture
+            Rectangle:
+                size: self.width, 96
+                pos: self.pos[0], self.pos[1]
+                texture: self.floor_texture
+    Label:
+        id: score
+        size_hint_y: None
+        height: 96
+        text: "0"
+        font_size: 40
+    Button:
+        text: "Start game"
+        background_normal: "boton.png"
+        background_down: "boton.png"
+        size_hint: (.50, .20)
+        pos: (150, 150)
+        id: start_button
+        on_release:
+            self.disabled = True
+            self.opacity = 0
+            app.start_game()
+
+    Button: 
+        text: ""
+        background_normal: "pausa.png"
+        background_down: "pausa.png"
+        size_hint: (.20, .20)
+        pos: (600, 500)
+        id: velocidad
+        on_release:
+            self.disabled = False
+            self.opacity = 1
+            app.move_pipes(4, 1)       
+
+    Bird:
+        source: "pajaro.png"
+        size_hint: None, None
+        size: 46, 34
+        pos: 20, (root.height - 96) / 2.0
+        id: bird
